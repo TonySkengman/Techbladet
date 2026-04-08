@@ -1,0 +1,38 @@
+body {
+  background-color: #f4f4f4;
+  font-family: Georgia, serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1a1f2e;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
