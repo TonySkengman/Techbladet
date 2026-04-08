@@ -36,3 +36,32 @@ body {
 .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.4);
 }
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Side Bar */
+.list-group-item a {
+  color: #222;
+  text-decoration: none;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}
+
+/* Articles */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:hover .card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-link:hover .card-title {
+  text-decoration: underline;
+}
