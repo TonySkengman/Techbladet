@@ -51,6 +51,16 @@ body {
   text-decoration: underline;
 }
 
+.badge {
+  text-decoration: none;
+}
+
+.badge:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 /* Articles */
 .card-link {
   text-decoration: none;
