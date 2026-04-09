@@ -1,155 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techbladet</title>
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  rel="stylesheet" />
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techbladet - senaste nyheterna om tech</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">Techbladet</a>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-light btn-sm">Köp TechPlus</a>
+          <a href="#" class="btn btn-outline-light btn-sm">Logga in</a>
+        </div>
+      </div>
+    </header>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand" href="#">Techbladet</a>
-    <div class="d-flex gap-2">
-      <a href="#" class="btn btn-light btn-sm">Köp TechPlus</a>
-      <a href="#" class="btn btn-outline-light btn-sm">Logga in</a>
-    </div>
-  </div>
-</header>
-
-<!-- NAV BAR -->
-<nav class="category-nav">
-  <div class="container d-flex justify-content-between align-items-center">
-    <ul class="nav">
-      <li class="nav-item"><a class="nav-link active" href="#">Nyheter</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">AI</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Hårdvara</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Mjukvara</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Startups</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Säkerhet</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Hållbarhet</a></li>
-    </ul>
-<div class="input-group search-group">
-  <input type="search" class="form-control form-control-sm search-input" placeholder="Sök nyheter..." />
-  <span class="input-group-text search-icon">
-    <i class="bi bi-search"></i>
-  </span>
-</div>
-  </div>
-</nav>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-md category-nav">
+      <div class="container">
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Öppna meny"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Nyheter</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">AI</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Hårdvara</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Mjukvara</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Startups</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Säkerhet</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hållbarhet</a>
+            </li>
+          </ul>
+          <div class="input-group search-group">
+            <input
+              type="search"
+              class="form-control form-control-sm search-input"
+              placeholder="Sök nyheter..."
+            />
+            <span class="input-group-text search-icon">
+              <i class="bi bi-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <!-- MAIN -->
     <main class="container my-4">
       <div class="row g-4">
- 
         <!-- ARTIKLAR -->
         <div class="col-md-8">
- 
           <!-- Hero artikel -->
           <a href="#" class="card-link">
-          <article class="card mb-4">
-            <img
-              src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80"
-              class="card-img-top"
-              alt="AI"
-            />
-            <div class="card-body">
-              <span class="badge bg-danger mb-2">AI</span>
-              <h2 class="card-title">OpenAI:s AGI-system klarar läkarexamen med högsta betyg — och föreslår ny cancerbehandling</h2>
-              <p class="card-text">
-                OpenAI meddelade i morse att deras nya system, kallat O3-Pro, självständigt
-                har identifierat en potentiell behandlingsmetod för en sällsynt form av
-                bukspottkörtelcancer. Resultaten skickas nu till kliniska prövningar i Sverige
-                och USA. Etikforskare varnar samtidigt för att vi rör oss in i okänt territorium.
-              </p>
-              <p class="text-muted small">Sara Ekström &middot; I dag, 07:15</p>
+            <article class="card mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80"
+                class="card-img-top"
+                alt="AI"
+              />
+              <div class="card-body">
+                <p class="toppnyhet">TOPPNYHET</p>
+                <span class="badge bg-danger mb-2">AI</span>
+                <h2 class="card-title">
+                  OpenAI:s AGI-system klarar läkarexamen med högsta betyg — och
+                  föreslår ny cancerbehandling
+                </h2>
+                <p class="card-text">
+                  OpenAI meddelade i morse att deras nya system, kallat O3-Pro,
+                  självständigt har identifierat en potentiell behandlingsmetod
+                  för en sällsynt form av bukspottkörtelcancer. Resultaten
+                  skickas nu till kliniska prövningar i Sverige och USA.
+                  Etikforskare varnar samtidigt för att vi rör oss in i okänt
+                  territorium.
+                </p>
+                <p class="text-muted small">
+                  Sara Ekström &middot; I dag, 07:15
+                </p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Två mindre artiklar -->
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <a href="#" class="card-link">
+                <article class="card h-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+                    class="card-img-top"
+                    alt="Hårdvara"
+                  />
+                  <div class="card-body">
+                    <span class="badge bg-primary mb-2">Hårdvara</span>
+                    <h5 class="card-title">
+                      Apple lanserar AR-glasögon till konsumentpris — leverans i
+                      höst
+                    </h5>
+                    <p class="card-text small">
+                      Efter år av rykten är Apples andra generation av mixed
+                      reality-glasögon bekräftad. Priset sätts till 9 999 kr och
+                      de väger under 60 gram.
+                    </p>
+                    <p class="text-muted small mb-0">1 timme sedan</p>
+                  </div>
+                </article>
+              </a>
             </div>
-          </article>
-        </a>
+            <div class="col-sm-6">
+              <a href="#" class="card-link">
+                <article class="card h-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80"
+                    class="card-img-top"
+                    alt="Säkerhet"
+                  />
+                  <div class="card-body">
+                    <span class="badge bg-warning text-dark mb-2"
+                      >Säkerhet</span
+                    >
+                    <h5 class="card-title">
+                      AI-genererade deepfakes lurar BankID — svenska banker i
+                      kris
+                    </h5>
+                    <p class="card-text small">
+                      En ny typ av realtids-deepfake har använts för att kringgå
+                      BankID:s ansiktsigenkänning. Flera storbanker pausar
+                      tillfälligt tjänsten.
+                    </p>
+                    <p class="text-muted small mb-0">2 timmar sedan</p>
+                  </div>
+                </article>
+              </a>
+            </div>
+          </div>
         </div>
 
-                <!-- SIDE BAR -->
+        <!-- SIDE BAR -->
         <aside class="col-md-4">
- 
           <!-- Senaste nytt -->
           <div class="card mb-4">
             <div class="card-header">Senaste nytt</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
-                <span class="badge bg-danger me-1">AI</span>
-                <a href="#">Tesla robotaxi rullar ut i Stockholm — ingen förare, inget problem?</a>
-                  <br>
-                  <small class="text-muted">52 minuter sedan</small>
-              </li>
-              <li class="list-group-item">
-                <span class="badge bg-danger me-1">AI</span>
-                <a href="#">Google ersätter sökmotorn med AI-agent — traditionella sökresultat försvinner</a>
-                  <br>
-                  <small class="text-muted">1 timme sedan</small>
-              </li>
-              <li class="list-group-item">
                 <span class="badge bg-primary me-1">Hårdvara</span>
-                <a href="#">Nvidia presenterar ett chip som är 10x snabbare än H100 — aktien rusar</a>
-                  <br>
-                  <small class="text-muted">3 timmar sedan</small>
+                <a href="#"
+                  >Apple lanserar AR-glasögon till konsumentpris — leverans i
+                  höst</a
+                >
+                <br />
+                <small class="text-muted">1 timme sedan</small>
               </li>
               <li class="list-group-item">
                 <span class="badge bg-warning text-dark me-1">Säkerhet</span>
-                <a href="#">EU förbjuder ansiktsigenkänning i offentliga miljöer från 2027</a>
-                  <br>
-                  <small class="text-muted">5 timmar sedan</small>
+                <a href="#"
+                  >AI-genererade deepfakes lurar BankID — svenska banker i
+                  kris</a
+                >
+                <br />
+                <small class="text-muted">2 timmar sedan</small>
+              </li>
+              <li class="list-group-item">
+                <span class="badge bg-danger me-1">AI</span>
+                <a href="#"
+                  >Tesla robotaxi rullar ut i Stockholm — ingen förare, inget
+                  problem?</a
+                >
+                <br />
+                <small class="text-muted">3 timmar sedan</small>
+              </li>
+              <li class="list-group-item">
+                <span class="badge bg-warning text-dark me-1">Säkerhet</span>
+                <a href="#"
+                  >EU förbjuder ansiktsigenkänning i offentliga miljöer från
+                  2027</a
+                >
+                <br />
+                <small class="text-muted">5 timmar sedan</small>
               </li>
             </ul>
           </div>
- 
+
           <!-- Mest lästa -->
           <div class="card mb-4">
             <div class="card-header">Mest lästa</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item small">
                 <span class="badge bg-danger me-1">AI</span>
-                <a href="#">OpenAI:s AGI-system klarar läkarexamen med högsta betyg — och föreslår ny cancerbehandling</a>
+                <a href="#"
+                  >OpenAI:s AGI-system klarar läkarexamen med högsta betyg — och
+                  föreslår ny cancerbehandling</a
+                >
               </li>
               <li class="list-group-item small">
                 <span class="badge bg-warning text-dark me-1">Säkerhet</span>
-                <a href="#">Nordkoreanska hackare infiltrerar europeiska AI-bolag</a>
+                <a href="#"
+                  >Nordkoreanska hackare infiltrerar europeiska AI-bolag</a
+                >
               </li>
               <li class="list-group-item small">
                 <span class="badge bg-warning text-dark me-1">Säkerhet</span>
-                <a href="#">Hackers stjäl 2 miljoner svenska BankID-uppgifter i massiv attack</a>
+                <a href="#"
+                  >Hackers stjäl 2 miljoner svenska BankID-uppgifter i massiv
+                  attack</a
+                >
               </li>
               <li class="list-group-item small">
                 <span class="badge bg-info me-1">Mjukvara</span>
-                <a href="#">Windows 12 lanseras — Microsoft skrotar lösenord helt</a>
+                <a href="#"
+                  >Windows 12 lanseras — Microsoft skrotar lösenord helt</a
+                >
               </li>
               <li class="list-group-item small">
                 <span class="badge bg-dark me-1">Startups</span>
-                <a href="#">Svensk 22-åring säljer sin app till Google för 800 miljoner kronor</a>
+                <a href="#"
+                  >Svensk 22-åring säljer sin app till Google för 800 miljoner
+                  kronor</a
+                >
               </li>
             </ul>
           </div>
 
-                    <!-- Ämnen -->
+          <!-- Ämnen -->
           <div class="card">
             <div class="card-header">Ämnen</div>
             <div class="card-body">
               <a href="#" class="badge bg-danger me-1 mb-1">AI</a>
-              <a href="#" class="badge bg-warning text-dark me-1 mb-1">Säkerhet</a>
+              <a href="#" class="badge bg-warning text-dark me-1 mb-1"
+                >Säkerhet</a
+              >
               <a href="#" class="badge bg-info me-1 mb-1">Mjukvara</a>
               <a href="#" class="badge bg-primary me-1 mb-1">Hårdvara</a>
               <a href="#" class="badge bg-success me-1 mb-1">Hållbarhet</a>
               <a href="#" class="badge bg-dark me-1 mb-1">Startups</a>
             </div>
           </div>
-              </main>
-    
-</body>
+        </aside>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

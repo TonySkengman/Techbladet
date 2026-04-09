@@ -41,15 +41,14 @@ body {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-
 .category-nav {
-  background-color:#3d5a80;
+  background-color: #3d5a80;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .category-nav .nav-link {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.9rem;
   padding: 10px 12px;
 }
 
@@ -68,6 +67,10 @@ body {
   color: #fff;
   padding: 0 10px;
   cursor: pointer;
+}
+
+.navbar-collapse.show {
+  padding-bottom: 10px;
 }
 
 /* Side Bar */
@@ -89,7 +92,6 @@ body {
   cursor: pointer;
 }
 
-
 /* Artiklar */
 .card-link {
   text-decoration: none;
@@ -103,4 +105,12 @@ body {
 
 .card-link:hover .card-title {
   text-decoration: underline;
+}
+
+.toppnyhet {
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #b8960c;
+  margin-bottom: 4px;
 }
