@@ -268,3 +268,68 @@ body {
   color: #fff;
   text-decoration: underline;
 }
+
+/* Artikel-formulär */
+#article-form-section {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Toast container */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast-msg {
+  background: #2d3f55;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  min-width: 220px;
+}
+
+.toast-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-msg.success {
+  border-left: 4px solid #28a745;
+}
+.toast-msg.danger {
+  border-left: 4px solid #dc3545;
+}
+
+/* Artikel-kort med raderingsknapp */
+.article-delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.article-wrapper {
+  position: relative;
+}
+
+.article-wrapper:hover .article-delete-btn {
+  opacity: 1;
+}
