@@ -1,3 +1,40 @@
+const STATIC_ARTICLES = [
+  {
+    id: "static_1",
+    title: "OpenAI:s AGI-system klarar läkarexamen med högsta betyg — och föreslår ny cancerbehandling",
+    category: "AI",
+    date: new Date().toISOString(),
+    author: "Sara Ekström",
+    imageUrl: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
+    content: `OpenAI meddelade i morse att deras nya system, kallat O3-Pro, självständigt har identifierat en potentiell behandlingsmetod för en sällsynt form av bukspottkörtelcancer. Resultaten skickas nu till kliniska prövningar i Sverige och USA. Etikforskare varnar samtidigt för att vi rör oss in i okänt territorium.`
+  },
+  {
+    id: "static_2",
+    title: "Apple lanserar AR-glasögon till konsumentpris — leverans i höst",
+    category: "Hårdvara",
+    date: new Date().toISOString(),
+    author: "Redaktionen",
+    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
+    content: `Efter år av rykten är Apples andra generation av mixed reality-glasögon bekräftad. Priset sätts till 9 999 kr och de väger under 60 gram.`
+  },
+  {
+    id: "static_3",
+    title: "AI-genererade deepfakes lurar BankID — svenska banker i kris",
+    category: "Säkerhet",
+    date: new Date().toISOString(),
+    author: "Redaktionen",
+    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80",
+    content: `En ny typ av realtids-deepfake har använts för att kringgå BankID:s ansiktsigenkänning. Flera storbanker pausar tillfälligt tjänsten.`
+  }
+];
+
+function getStaticArticle(id) {
+  return STATIC_ARTICLES.find(a => a.id === id) || null;
+}
+
+
+
+
 // ─── Hjälpfunktioner ───────────────────────────────────────────────────────
 
 const STORAGE_KEY    = "techbladet_articles";
@@ -180,14 +217,20 @@ function initStaticArticles() {
   document.querySelectorAll("article.card:not(.dynamic-article)").forEach((articleEl) => {
     const titleEl = articleEl.querySelector(".card-title");
     if (!titleEl) return;
-    const rawId = "static_" + titleEl.textContent.trim().slice(0, 40).replace(/\s+/g, "_");
-    articleEl.dataset.articleId = rawId;
-    const cardBody = articleEl.querySelector(".card-body");
-    if (!cardBody) return;
-    cardBody.appendChild(createEngagementSection(rawId));
 
+    // Matcha mot STATIC_ARTICLES baserat på titel
+    const match = STATIC_ARTICLES.find(a =>
+      titleEl.textContent.trim().startsWith(a.title.slice(0, 30))
+    );
+    if (!match) return;
+
+    articleEl.dataset.articleId = match.id;
+    const cardBody = articleEl.querySelector(".card-body");
+    if (cardBody) cardBody.appendChild(createEngagementSection(match.id));
+
+    // Gör länken klickbar
     const link = articleEl.closest("a.card-link");
-    if (link) link.addEventListener("click", (e) => e.preventDefault());
+    if (link) link.href = `article.html?id=${match.id}`;
   });
 }
 
@@ -238,7 +281,7 @@ function renderArticles() {
     `;
 
     container.appendChild(wrapper);
-    wrapper.querySelector("a.card-link").addEventListener("click", (e) => e.preventDefault());
+    wrapper.querySelector("a.card-link").href = `article.html?id=${article.id}`;
     wrapper.querySelector(".card-body").appendChild(createEngagementSection(String(article.id)));
   });
 
