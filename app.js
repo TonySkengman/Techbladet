@@ -222,7 +222,11 @@ function initStaticArticles() {
     const match = STATIC_ARTICLES.find(a =>
       titleEl.textContent.trim().startsWith(a.title.slice(0, 30))
     );
+    
     if (!match) return;
+
+    const cardText = articleEl.querySelector(".card-text");
+    if (cardText) cardText.textContent = truncate(cardText.textContent);
 
     articleEl.dataset.articleId = match.id;
     const cardBody = articleEl.querySelector(".card-body");
